@@ -1,17 +1,21 @@
-FROM node:12
 
-# Set the working directory in the container
+# Specify base image
+FROM node:18-alpine
+
+# Specify working directory
 WORKDIR /app
 
-# Copy the application files into the working directory
-COPY . /app
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Install the application dependencies
+# Install dependencies
 RUN npm install
 
-RUN node index.js
-# Define the entry point for the container
+# Copy source code
+COPY . .
+
+# Expose port 3000
+EXPOSE 3000
+
+# Run the app
 CMD ["npm", "start"]
-
-
-EXPOSE 1337/tcp
