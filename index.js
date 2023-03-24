@@ -32,7 +32,7 @@ let todoModel = require('./todo_schema')
 app.post('/todo/add', (req, res) => {  
 
     let nnewTodo = new todoModel;  
-    nnewTodo.title = req.body.todo; 
+    nnewTodo.title = req.body.todo;  
      nnewTodo.completed = false; 
     let t=  nnewTodo.save();
     console.log(t);
