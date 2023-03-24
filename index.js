@@ -5,8 +5,8 @@ const app = express();
 const mongoose = require('mongoose');
 
 app.use(cors());
-app.listen(1337, () => {
- console.log("Server started on port 1337")
+app.listen(3000, () => {
+ console.log("Server started on port 3000")
 })
 mongoose.connect("mongodb+srv://ham25:Sapra2601$@cluster0.ckehovm.mongodb.net/ToDo?retryWrites=true&w=majority", {
   useNewUrlParser: true,
